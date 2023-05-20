@@ -7,7 +7,7 @@ package [Security.FunctionalRequirements] {
         usecase Singup
         usecase ResetPassword
         usecase ConfirmResetPassword
-        usecase Logout
+        usecase ConfirmEmail
     }
 }
 
