@@ -1,0 +1,42 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+allowmixing
+
+actor User
+
+User ---> Catalogs
+User -left> Library
+User -right> Security
+
+
+package Security {
+    package (Commands) as SecurityCommands {
+        usecase SignUp
+        usecase ConfirmEmail
+        usecase Login
+        usecase ResetPassword
+        usecase ConfirmResetPassword
+    }
+}
+
+package Library {
+    package (Queries) as LibraryQueries {
+        usecase GetCoursesVisualizer
+        usecase GetCourseVisualizer
+    }
+}
+
+package Catalogs {
+    package (Commands) as CatalogsCommands {
+        usecase CreateCourse
+        usecase DeleteCourse
+        usecase UpdateCourse
+    }
+    
+    package (Queries) as CatalogsQueries {
+        usecase (GetCoursesVisualizer) as CatalogsQueriesGetCoursesVisualizer
+        usecase (GetCourseVisualizer) as CatalogsQueriesGetCourseVisualizer
+    }
+}
+
+@enduml

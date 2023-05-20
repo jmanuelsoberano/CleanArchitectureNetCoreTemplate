@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+package [Security.FunctionalRequirements] {
+    rectangle Commands {
+        usecase Login
+        usecase Singup
+        usecase ResetPassword
+        usecase ConfirmResetPassword
+        usecase Logout
+    }
+}
+
+@enduml

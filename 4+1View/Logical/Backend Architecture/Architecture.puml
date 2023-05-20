@@ -1,0 +1,93 @@
+﻿@startuml
+'https://plantuml.com/class-diagram
+allowmixing
+
+package API {
+    class Presenter
+    class Controller
+    
+    interface Respond << (O, orange) VM>>
+    
+    Presenter --> Respond
+}
+
+
+package Application.Queries {
+    interface "IRequestHandler" as IRequestQuery
+    class "UseCase" as UseCaseQuery
+    interface "IRepositoryGeneric" as IRepositoryGenericPersistence
+    interface "IRepository" as IRepositoryDataAccess
+    interface "IIdentity" as IIdentityQuery
+    interface "IInfrastructure" as IInfrastructureQuery
+
+    class "Request" as RequestQuery << (I, orange) DTO>>
+    class "Respond" as RespondQuery << (O, orange) DTO>>
+        
+    IRequestQuery <|-- UseCaseQuery
+    UseCaseQuery --> RequestQuery
+    UseCaseQuery --> RespondQuery
+    UseCaseQuery *--> IRepositoryGenericPersistence   
+    UseCaseQuery *--> IRepositoryDataAccess
+    UseCaseQuery o--> IIdentityQuery       
+    UseCaseQuery o--> IInfrastructureQuery
+}
+
+Presenter *---> IRequestQuery
+
+package Application.Commands {
+    interface "IRequestHandler" as IRequestCommand
+    class "UseCase" as UseCaseCommand
+    interface "IRepository" as IRepositoryPersistence
+    interface "IIdentity" as IIdentityCommand
+    interface "IInfrastructure" as IInfrastructureCommand
+
+    class "Request" as RequestCommand << (S, orange) DTO>>
+    
+    IRequestCommand <|-- UseCaseCommand
+    UseCaseCommand --> RequestCommand
+    
+    UseCaseCommand *--> IRepositoryPersistence
+    UseCaseCommand o--> IIdentityCommand
+    UseCaseCommand o--> IInfrastructureCommand
+}
+
+Controller *---> IRequestCommand
+
+package Domain {
+    class Entity
+}
+
+UseCaseCommand --> Entity 
+
+package DataAccess.Commands {
+    class "UseCase" as UseCasePersistence
+    class "GenericRepository" as GenericRepositoryPersistence
+    
+    IRepositoryPersistence <|.. UseCasePersistence
+    IRepositoryGenericPersistence <|.. GenericRepositoryPersistence
+    
+    GenericRepositoryPersistence --> Entity
+    UseCasePersistence --> Entity
+}
+
+package DataAccess.Queries {
+    class "UseCase" as UseCaseDataAccess
+
+    IRepositoryDataAccess <|.. UseCaseDataAccess
+}
+
+package Identity {
+    class "XService" as XServiceIdentity
+
+    IIdentityQuery <|.. XServiceIdentity
+    IIdentityCommand <|.. XServiceIdentity
+}
+
+package Infrastructure {
+    class "XService" as XServiceInfrastructure
+
+    IInfrastructureQuery <|... XServiceInfrastructure
+    IInfrastructureCommand <|... XServiceInfrastructure
+}
+
+@enduml

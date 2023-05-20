@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+left to right direction
+
+actor User
+
+
+rectangle Commands {
+    usecase CreateCourse
+    usecase DeleteCourse
+    usecase UpdateCourse
+}
+
+rectangle Queries {
+    usecase GetCoursesVisualizer
+    usecase GetCourseVisualizer
+}
+
+
+User --> CreateCourse
+User --> DeleteCourse
+User --> UpdateCourse
+User --> GetCoursesVisualizer
+User --> GetCourseVisualizer
+
+@enduml

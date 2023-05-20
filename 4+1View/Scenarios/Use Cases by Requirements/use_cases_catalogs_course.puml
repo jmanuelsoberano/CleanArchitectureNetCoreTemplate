@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+package [Catalog.Course.FunctionalRequirements] {
+    rectangle Queries {
+        usecase GetCourseVisualizer
+        usecase GetCoursesVisualizer
+    }
+
+    rectangle Commands {
+        usecase CreateCourse
+        usecase UpdateCourse
+        usecase DeleteCourse    
+    }   
+}
+
+@enduml

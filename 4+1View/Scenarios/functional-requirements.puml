@@ -1,0 +1,10 @@
+@startuml
+skinparam componentStyle rectangle
+
+package Functional.Requirements {
+   [Security : <<RequerimientoFuncional>>]
+   [Library : <<RequerimientoFuncional>>]
+   [Catalogs : <<RequerimientoFuncional>>]
+}
+
+@enduml

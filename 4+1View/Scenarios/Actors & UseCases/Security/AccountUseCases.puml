@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+left to right direction
+
+actor User
+
+
+rectangle Commands {
+    usecase SignUp
+    usecase ConfirmEmail
+    usecase Login
+    usecase ResetPassword
+    usecase ConfirmResetPassword
+}
+
+
+User --> SignUp
+User --> ConfirmEmail
+User --> Login
+User --> ResetPassword
+User --> ConfirmResetPassword
+
+@enduml

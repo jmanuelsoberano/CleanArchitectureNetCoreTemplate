@@ -1,0 +1,55 @@
+﻿@startuml
+'https://plantuml.com/class-diagram
+
+allowmixing
+
+package API
+
+package Infrastructure {
+    package DataAccess {
+        package Queries
+        package Commands        
+    }
+    package Identity
+    package Infrastructure
+}
+
+package Core {
+    package Application
+    package Domain
+}
+
+API --> Application
+Application --> Domain
+
+Application <.. Commands
+Application <.. Infrastructure 
+Application <.. Identity
+Application <.. Queries
+Domain <-- Commands
+
+'
+'package Infrastructure.Persistence
+'package Infrastructure.DataAccess
+'package Infrastructure.Identity
+'package Infrastructure.Infrastructure
+'package Domain
+'package Application
+'
+'Application <-- Infrastructure.Persistence 
+'Domain <-- Infrastructure.Persistence 
+'Domain <-- Infrastructure.DataAccess
+'
+'
+'Application <-- Infrastructure.Identity
+'Application <-- Infrastructure.Infrastructure
+'
+'Application --> Domain
+'
+'API --> Application
+'API ..> Infrastructure.Persistence
+'API ..> Infrastructure.Identity
+'API ..> Infrastructure.Infrastructure
+'API ..> Infrastructure.DataAccess
+
+@enduml

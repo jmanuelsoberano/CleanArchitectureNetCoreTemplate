@@ -1,0 +1,27 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/CleanArchitectureNetCore/FileContentIndex
+/src/CleanArchitectureNetCore.Api/bin/Debug/net7.0
+/src/CleanArchitectureNetCore.Api/obj/Debug/net7.0
+/src/CleanArchitectureNetCore.Api/obj
+/src/CleanArchitectureNetCore.Application/bin/Debug/net7.0
+/src/CleanArchitectureNetCore.Application/obj/Debug/net7.0
+/src/CleanArchitectureNetCore.Application/obj
+/src/CleanArchitectureNetCore.DataAccess.Commands/bin/Debug/net7.0
+/src/CleanArchitectureNetCore.DataAccess.Commands/obj/Debug/net7.0
+/src/CleanArchitectureNetCore.DataAccess.Commands/obj
+/src/CleanArchitectureNetCore.DataAccess.Queries/bin/Debug/net7.0
+/src/CleanArchitectureNetCore.DataAccess.Queries/obj/Debug/net7.0
+/src/CleanArchitectureNetCore.DataAccess.Queries/obj
+/src/CleanArchitectureNetCore.Domain/bin/Debug/net7.0
+/src/CleanArchitectureNetCore.Domain/obj/Debug/net7.0
+/src/CleanArchitectureNetCore.Domain/obj
+/src/CleanArchitectureNetCore.Identity/bin/Debug/net7.0
+/src/CleanArchitectureNetCore.Identity/obj/Debug/net7.0
+/src/CleanArchitectureNetCore.Identity/obj
+/src/CleanArchitectureNetCore.Infrastructure/bin/Debug/net7.0
+/src/CleanArchitectureNetCore.Infrastructure/obj/Debug/net7.0
+/src/CleanArchitectureNetCore.Infrastructure/obj
+/.vs/CleanArchitectureNetCore/v17/.suo
